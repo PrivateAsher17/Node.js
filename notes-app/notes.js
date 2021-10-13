@@ -2,4 +2,8 @@ const getNotes = function(){
     return "Your Notes..."
 }
 
-module.exports = getNotes
+const addNote = function(title, body){
+
+}
+
+module.exports = {getNotes:getNotes, addNote:addNote}

@@ -1,4 +1,4 @@
-// const getNotes = require("./notes.js")
+const notes = require("./notes.js")
 // const validator = require("validator")
 // const fs = require('fs')
 
@@ -23,12 +23,21 @@ yargs.command({
             describe:"Note Title",
             demandOption:true,
             type:"string"
+        },
+        desc:{
+            describe:"Note Description",
+            demandOption:true,
+            type:"string"
         }
     },
     handler: function(argv){
+        notes.addNote(argv.title, argv.body)
         // console.log("Adding a new note!",argv);
-        console.log("Title : "+argv.title);
+        // console.log("Title : "+argv.title);
+        // console.log("Description :"+argv.desc);
     }
+
+
 })
 yargs.command({
     command:'list',
